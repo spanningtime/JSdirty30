@@ -1,30 +1,93 @@
+@import 'animations';
+@import 'colors';
+
 body {
-  background: #aec7d3;
-  font-family: helvetica;
+  background: $blue;
+  margin: 0px;
 }
 
 header {
+  color: $pink;
+  font-family: helvetica;
   font-size: 100px;
-  color: #ec6763;
 }
 
-#drumk-container {
+#drumkit-header-container {
   display: flex;
-  flex-direction: row;
-}
-
-#drumkit-container {
-  display: flex;
+  height: 195px;
   flex-direction: column;
+  margin: 10px 10px 25px 15px;
+  #drumk-container {
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    margin-right: 10px;
+  }
 }
 
 #lines-it-container {
+  align-items: center;
   display: flex;
-  width: 400px;
+  height: 100px;
+  width: 100%;
+
+  #it-header {
+    -webkit-transform: rotate(90deg);
+   -moz-transform: rotate(90deg);
+   -ms-transform: rotate(90deg);
+   transform: rotate(90deg);
+   font-size: 90px;
+   margin-top: 8px;
+   width: 100px;
+  }
+
+  #lines-container {
+    width: 100%;
+  }
+  .line {
+    animation: slide 1s ease-in forwards;
+    background-color: $purple;
+    height: 20px;
+    margin-bottom: 10px;
+    opacity: 0.6;
+
+    &:nth-child(2) {
+      background-color: $green;
+    }
+    &:nth-child(3) {
+      background-color: $yellow;
+      margin-bottom: 0px;
+      margin-top: 10px;
+    }
+  }
 }
 
-.line {
-  width: 300px;
-  height: 30px;
-  background-color: red;
+#drums-container {
+  background-color: $pink;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: center;
+  opacity: 0.6;
+  width: 100%;
+
+  .drums-position-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .drum {
+    height: 125px;
+    width: 125px;
+    border: 5px solid black;
+    border-radius: 50%;
+    background-color: $green;
+    margin: 10px;
+  }
+  .cymb {
+    background-color: $yellow;
+  }
+  .snare-kick {
+    background-color: $purple;
+  }
 }

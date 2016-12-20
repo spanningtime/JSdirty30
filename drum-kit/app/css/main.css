@@ -1,30 +1,104 @@
+@keyframes slide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 body {
   background: #aec7d3;
-  font-family: helvetica;
+  margin: 0px;
 }
 
 header {
-  font-size: 100px;
   color: #ec6763;
+  font-family: helvetica;
+  font-size: 100px;
 }
 
-#drumk-container {
+#drumkit-header-container {
+  display: flex;
+  height: 195px;
+  flex-direction: column;
+  margin: 10px 10px 25px 15px;
+}
+
+#drumkit-header-container #drumk-container {
+  justify-content: flex-end;
   display: flex;
   flex-direction: row;
-}
-
-#drumkit-container {
-  display: flex;
-  flex-direction: column;
+  margin-right: 10px;
 }
 
 #lines-it-container {
+  align-items: center;
   display: flex;
-  width: 400px;
+  height: 100px;
+  width: 100%;
 }
 
-.line {
-  width: 300px;
-  height: 30px;
-  background-color: red;
+#lines-it-container #it-header {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  font-size: 90px;
+  margin-top: 8px;
+  width: 100px;
+}
+
+#lines-it-container #lines-container {
+  width: 100%;
+}
+
+#lines-it-container .line {
+  animation: slide 1s ease-in forwards;
+  background-color: #696c91;
+  height: 20px;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+
+#lines-it-container .line:nth-child(2) {
+  background-color: #3c7a70;
+}
+
+#lines-it-container .line:nth-child(3) {
+  background-color: #dbdb98;
+  margin-bottom: 0px;
+  margin-top: 10px;
+}
+
+#drums-container {
+  background-color: #ec6763;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  justify-content: center;
+  opacity: 0.6;
+  width: 100%;
+}
+
+#drums-container .drums-position-container {
+  display: flex;
+  justify-content: center;
+}
+
+#drums-container .drum {
+  height: 125px;
+  width: 125px;
+  border: 5px solid black;
+  border-radius: 50%;
+  background-color: #3c7a70;
+  margin: 10px;
+}
+
+#drums-container .cymb {
+  background-color: #dbdb98;
+}
+
+#drums-container .snare-kick {
+  background-color: #696c91;
 }
