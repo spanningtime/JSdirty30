@@ -1,0 +1,30 @@
+body {
+  background: #aec7d3;
+  font-family: helvetica;
+}
+
+header {
+  font-size: 100px;
+  color: #ec6763;
+}
+
+#drumk-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#drumkit-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#lines-it-container {
+  display: flex;
+  width: 400px;
+}
+
+.line {
+  width: 300px;
+  height: 30px;
+  background-color: red;
+}
