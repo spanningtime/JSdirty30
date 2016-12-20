@@ -7,6 +7,19 @@
   }
 }
 
+header, footer, .drum {
+  font-family: helvetica;
+}
+
+header, footer {
+  font-size: 100px;
+  color: #ec6763;
+}
+
+.drum {
+  font-size: 40px;
+}
+
 body {
   background: #aec7d3;
   margin: 0px;
@@ -15,7 +28,6 @@ body {
 header {
   color: #ec6763;
   font-family: helvetica;
-  font-size: 100px;
 }
 
 #drumkit-header-container {
@@ -87,12 +99,14 @@ header {
 }
 
 #drums-container .drum {
-  height: 125px;
-  width: 125px;
   border: 5px solid black;
   border-radius: 50%;
   background-color: #3c7a70;
+  height: 125px;
+  line-height: 125px;
   margin: 10px;
+  text-align: center;
+  width: 125px;
 }
 
 #drums-container .cymb {
@@ -101,4 +115,9 @@ header {
 
 #drums-container .snare-kick {
   background-color: #696c91;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
 }

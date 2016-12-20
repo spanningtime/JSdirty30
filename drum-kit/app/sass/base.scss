@@ -1,0 +1,14 @@
+@import 'colors';
+
+header, footer, .drum {
+  font-family: helvetica;
+}
+
+header, footer {
+  font-size: 100px;
+  color: $pink;
+}
+
+.drum {
+  font-size: 40px;
+}
