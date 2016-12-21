@@ -49,7 +49,7 @@ header {
     background-color: $purple;
     height: 20px;
     margin-bottom: 10px;
-    opacity: 0.6;
+    opacity: 0.5;
 
     &:nth-child(2) {
       background-color: $green;
@@ -63,12 +63,11 @@ header {
 }
 
 #drums-container {
-  background-color: $pink;
+  background-color: $lightPink;
   display: flex;
   flex-direction: column;
   height: 600px;
   justify-content: center;
-  opacity: 0.6;
   width: 100%;
 
   .drums-position-container {
@@ -83,14 +82,22 @@ header {
     height: 125px;
     line-height: 125px;
     margin: 10px;
+    opacity: 0.7;
     text-align: center;
+    transition: 0.1s ease-in;
     width: 125px;
+    z-index: 1;
   }
   .cymb {
     background-color: $yellow;
   }
   .snare-kick {
     background-color: $purple;
+  }
+
+  .play {
+    transform: scale(1.5);
+    opacity: 1;
   }
 }
 
