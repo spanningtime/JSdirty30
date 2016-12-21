@@ -71,6 +71,7 @@ header {
   height: 20px;
   margin-bottom: 10px;
   opacity: 0.5;
+  transition: 0.5s;
 }
 
 #lines-it-container .line:nth-child(2) {
@@ -81,6 +82,11 @@ header {
   background-color: #dbdb98;
   margin-bottom: 0px;
   margin-top: 10px;
+}
+
+#lines-it-container .line-transition {
+  opacity: 1;
+  transform: scale(1.5);
 }
 
 #drums-container {
@@ -124,6 +130,10 @@ header {
   opacity: 1;
 }
 
+#drums-container .cymb-animation {
+  transform: rotateX(360deg);
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -132,9 +142,10 @@ footer {
 
 footer p {
   opacity: 1;
-  transition: 0.5s ease-in;
+  transition: 0.5s;
 }
 
 .drumType {
   opacity: 0;
+  transform: translateY(-300px);
 }
