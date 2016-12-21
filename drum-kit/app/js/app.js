@@ -13,7 +13,7 @@ const keyCodes = [
 ];
 
 const drums = document.getElementById("drums-container")
-const footer = document.querySelector('footer')
+const drumName = document.querySelector('p')
 
 window.addEventListener('keydown', (event) => {
   let target = document.querySelector(`div[data-key="${event.keyCode}"]`)
@@ -25,7 +25,7 @@ window.addEventListener('keydown', (event) => {
 
   keyCodes.map((el) => {
     if (event.keyCode == el.keycode) {
-      footer.innerHTML = el.drumType.toUpperCase();
+      drumName.innerHTML = el.drumType.toUpperCase();
     }
   })
     target.classList.add("play");
@@ -41,19 +41,27 @@ drums.addEventListener('click', (event) => {
 
   keyCodes.map((el) => {
     if (event.target.getAttribute('data-key') == el.keycode) {
-      footer.innerHTML = el.drumType.toUpperCase();
+      drumName.innerHTML = el.drumType.toUpperCase();
     }
   });
 
   event.target.classList.add("play");
+  drumName.classList.add("drumType")
 })
 
-const removeTransition = function(event) {
+const removeDrumTypeTransition = function(event) {
+  drumName.classList.remove('drumType')
+  drumName.innerHTML = '';
+}
+
+const removePlayTransition = function(event) {
   event.target.classList.remove('play')
 }
 
 const eachDrum = document.querySelectorAll('.drum');
 
 eachDrum.forEach((drum) => {
-  drum.addEventListener('transitionend', removeTransition)
+  drum.addEventListener('transitionend', removePlayTransition)
 })
+
+drumName.addEventListener('transitionend', removeDrumTypeTransition);
