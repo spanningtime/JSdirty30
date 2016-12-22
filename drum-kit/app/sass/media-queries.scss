@@ -1,0 +1,41 @@
+@media screen and (max-height: 768px) {
+  header, footer {
+    font-size: 75px;
+  }
+
+  .line {
+    height: 15px;
+  }
+
+  #drumkit-header-container {
+    margin: 5px 5px -25px 10px;
+  }
+
+  #drumk-container {
+    margin-bottom: -20px;
+  }
+
+  .drum {
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+  }
+
+  footer p {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-height: 769px) {
+  .line {
+    height: 20px;
+  }
+  #drumkit-header-container {
+    margin: 10px 10px 25px 15px;
+  }
+  .drum {
+    height: 125px;
+    width: 125px;
+    line-height: 125px;
+  }
+}

@@ -22,6 +22,10 @@ console.log(lines);
 const drums = document.getElementById('drums-container')
 const drumName = document.querySelector('p')
 
+window.onresize = function() {
+  drumName.innerHTML = "bang on them drums"
+}
+
 const addDrumName = function() {
   drumName.classList.add("drumType")
 };
