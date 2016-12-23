@@ -71,6 +71,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0 auto;
   padding: 20px 0px;
   width: 100%;
 
@@ -80,10 +81,10 @@ header {
   }
 
   .drum {
-    border: 5px solid black;
-    border-radius: 50%;
+    // border: 5px solid black;
+    // border-radius: 50%;
     background-color: $green;
-    margin: 10px;
+    // margin: 10px;
     opacity: 0.7;
     text-align: center;
     transition: transform 0.1s ease-in;
