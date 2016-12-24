@@ -21,11 +21,14 @@ header, footer {
 }
 
 @media screen and (max-width: 631px) {
+  #drums-container {
+    padding: 0 5px;
+  }
   .drum {
     border-radius: 50%;
     margin: 3px 0px;
   }
-  .top .drum:first-child {
+  .top .drum {
     height: 25%;
     width: 25%;
   }
@@ -148,8 +151,8 @@ header {
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  padding: 20px 0px;
-  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #drums-container .drums-position-container {

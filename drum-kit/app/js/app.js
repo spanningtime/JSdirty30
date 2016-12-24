@@ -18,6 +18,29 @@ const yellowLine = document.getElementById('yellow');
 const lines = document.getElementsByClassName('line');
 const drums = document.getElementById('drums-container');
 const drumName = document.querySelector('p');
+let lastClick;
+
+
+//on click record the time
+//compare the time to the last time a click was recorded.
+// if it has been
+
+
+//every 2 seconds check to see if it has been more than 2 seconds since the last click
+
+
+// TIMER FUNCTIONS
+const bangDrums = function() {
+  if (Date.now() - lastClick > 1500) {
+    drumName.innerHTML = "bang them drums"
+  }
+}
+
+let intervalId = window.setInterval("bangDrums()", 2000);
+
+// window.addEventListener('keydown', () => {
+//   lastClick = Date.now();
+// })
 
 const addDrumName = function() {
   drumName.classList.add("drumType")
@@ -28,21 +51,18 @@ window.onresize = function() {
 }
 
 const isYellow = function(code) {
-  console.log(code)
   if (code == 89 || code == 79 || code == 72) {
     return true;
   };
 }
 
 const isPurple = function(code) {
-  console.log(code)
   if (code == 77 || code == 78) {
     return true;
   }
 }
 
 const isGreen = function(code) {
-  console.log(code);
   if (code == 85 || code == 73 || code == 74 || code == 75) {
     return true;
   }
@@ -63,6 +83,7 @@ const addClasses = function(code, el) {
 }
 
 window.addEventListener('keydown', (event) => {
+  lastClick = Date.now();
   let target = document.querySelector(`div[data-key="${event.keyCode}"]`)
 
   const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
@@ -71,7 +92,6 @@ window.addEventListener('keydown', (event) => {
   audio.play()
 
   keyCodes.map((el) => {
-    console.log(target);
     let kc = event.keyCode;
     if (kc == el.keycode) {
       drumName.innerHTML = el.drumType.toUpperCase();
@@ -83,6 +103,7 @@ window.addEventListener('keydown', (event) => {
 });
 
 drums.addEventListener('click', (event) => {
+  lastClick = Date.now();
   const audio = document.querySelector(`audio[data-key="${event.target.getAttribute('data-key')}"]`);
 
   if (!audio) return;
