@@ -1,4 +1,3 @@
-'use strict'
 
 const keyCodes = [
   { keycode: 89, drumType: 'open high hat' },
@@ -19,15 +18,6 @@ const lines = document.getElementsByClassName('line');
 const drums = document.getElementById('drums-container');
 const drumName = document.querySelector('p');
 let lastClick;
-
-
-//on click record the time
-//compare the time to the last time a click was recorded.
-// if it has been
-
-
-//every 2 seconds check to see if it has been more than 2 seconds since the last click
-
 
 // TIMER FUNCTIONS
 const bangDrums = function() {
@@ -83,6 +73,7 @@ const addClasses = function(code, el) {
 }
 
 window.addEventListener('keydown', (event) => {
+  console.log('keydown')
   lastClick = Date.now();
   let target = document.querySelector(`div[data-key="${event.keyCode}"]`)
 
@@ -123,8 +114,8 @@ drums.addEventListener('click', (event) => {
 })
 
 const removeTransition = function(event) {
-  for (let el of lines) {
-    el.classList.remove('line-transition')
+  for (let x = 0; x < lines.length; x++) {
+    lines[x].classList.remove('line-transition');
   }
   event.target.classList.remove('cymb-animation')
   event.target.classList.remove('play');

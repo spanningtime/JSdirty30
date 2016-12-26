@@ -14,7 +14,8 @@ module.exports = function(grunt) {
         files: ['app/index.html']
       },
       js: {
-        files: ['app/js/app.js']
+        files: ['app/js/app.js'],
+        tasks: ['babel']
       }
     },
     sass: {
@@ -27,12 +28,23 @@ module.exports = function(grunt) {
         }
       }
     },
+    babel: {
+      options: {
+        sourceMap: true,
+        presets: ['es2015']
+      },
+      dist: {
+        files: {
+          'app/js/app-es5.js': 'app/js/app.js'
+        }
+      }
+    },
     connect: {
       server: {
         options: {
           port: 6969,
           protocol: 'http',
-          hostname: 'localhost',
+          hostname: '0.0.0.0',
           base: 'app',
           directory: null,
           open: false,
@@ -50,8 +62,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-babel');
 
   grunt.registerTask('default', ['connect']);
-  grunt.registerTask('go', ['sass', 'watch']);
+  grunt.registerTask('go', ['babel', 'sass', 'watch']);
 
 }
