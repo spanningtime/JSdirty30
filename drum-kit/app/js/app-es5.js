@@ -10,7 +10,7 @@ var drums = document.getElementById('drums-container');
 var drumName = document.querySelector('p');
 var lastClick = void 0;
 
-// TIMER FUNCTIONS
+// TIMER FUNCTION
 var bangDrums = function bangDrums() {
   if (Date.now() - lastClick > 1500) {
     drumName.innerHTML = "bang them drums";
@@ -18,10 +18,6 @@ var bangDrums = function bangDrums() {
 };
 
 var intervalId = window.setInterval("bangDrums()", 2000);
-
-// window.addEventListener('keydown', () => {
-//   lastClick = Date.now();
-// })
 
 var addDrumName = function addDrumName() {
   drumName.classList.add("drumType");
@@ -34,7 +30,7 @@ window.onresize = function () {
 var isYellow = function isYellow(code) {
   if (code == 89 || code == 79 || code == 72) {
     return true;
-  };
+  }
 };
 
 var isPurple = function isPurple(code) {
@@ -62,7 +58,6 @@ var addClasses = function addClasses(code, el) {
 };
 
 window.addEventListener('keydown', function (event) {
-  console.log('keydown');
   lastClick = Date.now();
   var target = document.querySelector('div[data-key="' + event.keyCode + '"]');
 

@@ -19,18 +19,14 @@ const drums = document.getElementById('drums-container');
 const drumName = document.querySelector('p');
 let lastClick;
 
-// TIMER FUNCTIONS
+// TIMER FUNCTION
 const bangDrums = function() {
   if (Date.now() - lastClick > 1500) {
     drumName.innerHTML = "bang them drums"
   }
-}
+};
 
 let intervalId = window.setInterval("bangDrums()", 2000);
-
-// window.addEventListener('keydown', () => {
-//   lastClick = Date.now();
-// })
 
 const addDrumName = function() {
   drumName.classList.add("drumType")
@@ -38,25 +34,25 @@ const addDrumName = function() {
 
 window.onresize = function() {
   drumName.innerHTML = "bang on them drums"
-}
+};
 
 const isYellow = function(code) {
   if (code == 89 || code == 79 || code == 72) {
     return true;
-  };
-}
+  }
+};
 
 const isPurple = function(code) {
   if (code == 77 || code == 78) {
     return true;
   }
-}
+};
 
 const isGreen = function(code) {
   if (code == 85 || code == 73 || code == 74 || code == 75) {
     return true;
   }
-}
+};
 
 const addClasses = function(code, el) {
   if (isPurple(code)) {
@@ -70,12 +66,11 @@ const addClasses = function(code, el) {
     el.classList.add("cymb-animation");
     el.classList.add("play");
   }
-}
+};
 
 window.addEventListener('keydown', (event) => {
-  console.log('keydown')
   lastClick = Date.now();
-  let target = document.querySelector(`div[data-key="${event.keyCode}"]`)
+  let target = document.querySelector(`div[data-key="${event.keyCode}"]`);
 
   const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
 
