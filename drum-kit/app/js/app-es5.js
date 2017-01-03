@@ -7,13 +7,14 @@ var greenLine = document.getElementById('green');
 var yellowLine = document.getElementById('yellow');
 var lines = document.getElementsByClassName('line');
 var drums = document.getElementById('drums-container');
-var drumName = document.querySelector('p');
+var drumName = document.getElementById('drum-name');
+var directions = document.getElementById('directions');
 var lastClick = void 0;
 
 // TIMER FUNCTION
 var bangDrums = function bangDrums() {
   if (Date.now() - lastClick > 1500) {
-    drumName.innerHTML = "bang them drums";
+    directions.innerHTML = "bang them drums";
   }
 };
 
@@ -24,7 +25,7 @@ var addDrumName = function addDrumName() {
 };
 
 window.onresize = function () {
-  drumName.innerHTML = "bang on them drums";
+  directions.innerHTML = "bang on them drums";
 };
 
 var isYellow = function isYellow(code) {
@@ -66,6 +67,8 @@ window.addEventListener('keydown', function (event) {
   if (!audio) return;
   audio.play();
 
+  directions.innerHTML = '';
+
   keyCodes.map(function (el) {
     var kc = event.keyCode;
     if (kc == el.keycode) {
@@ -83,6 +86,8 @@ drums.addEventListener('click', function (event) {
 
   if (!audio) return;
   audio.play();
+
+  directions.innerHTML = '';
 
   keyCodes.map(function (el) {
     if (event.target.getAttribute('data-key') == el.keycode) {

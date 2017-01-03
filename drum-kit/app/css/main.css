@@ -27,6 +27,9 @@ header, footer {
   #drums-container {
     padding: 0 5px;
   }
+  #it-header {
+    font-size: 70px;
+  }
   .drum {
     border-radius: 50%;
     height: 100px;
@@ -41,7 +44,7 @@ header, footer {
     font-size: 70px;
   }
   footer p {
-    font-size: 10vw;
+    font-size: 9vw;
   }
 }
 
@@ -51,6 +54,9 @@ header, footer {
     width: 90px;
     line-height: 90px;
     transition: height 1s ease-in;
+  }
+  .line {
+    height: 10px;
   }
 }
 
@@ -138,7 +144,6 @@ header {
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
-  font-size: 90px;
   margin-top: 8px;
   width: 100px;
 }
@@ -219,10 +224,9 @@ footer {
 
 footer p {
   opacity: 1;
-  transition: 0.5s;
+  transition: all 1s ease-in-out;
 }
 
 .drumType {
   opacity: 0;
-  transform: translateY(-800px);
 }

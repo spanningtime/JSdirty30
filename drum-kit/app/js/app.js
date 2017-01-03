@@ -16,13 +16,14 @@ const greenLine = document.getElementById('green');
 const yellowLine = document.getElementById('yellow');
 const lines = document.getElementsByClassName('line');
 const drums = document.getElementById('drums-container');
-const drumName = document.querySelector('p');
+const drumName = document.getElementById('drum-name');
+const directions = document.getElementById('directions');
 let lastClick;
 
 // TIMER FUNCTION
 const bangDrums = function() {
   if (Date.now() - lastClick > 1500) {
-    drumName.innerHTML = "bang them drums"
+    directions.innerHTML = "bang them drums"
   }
 };
 
@@ -33,7 +34,7 @@ const addDrumName = function() {
 };
 
 window.onresize = function() {
-  drumName.innerHTML = "bang on them drums"
+  directions.innerHTML = "bang on them drums"
 };
 
 const isYellow = function(code) {
@@ -77,6 +78,8 @@ window.addEventListener('keydown', (event) => {
   if (!audio) return;
   audio.play()
 
+  directions.innerHTML = '';
+
   keyCodes.map((el) => {
     let kc = event.keyCode;
     if (kc == el.keycode) {
@@ -94,6 +97,8 @@ drums.addEventListener('click', (event) => {
 
   if (!audio) return;
   audio.play();
+
+  directions.innerHTML = '';
 
   keyCodes.map((el) => {
     if (event.target.getAttribute('data-key') == el.keycode) {

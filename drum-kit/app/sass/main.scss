@@ -36,7 +36,7 @@ header {
    -moz-transform: rotate(90deg);
    -ms-transform: rotate(90deg);
    transform: rotate(90deg);
-   font-size: 90px;
+  //  font-size: 90px;
    margin-top: 8px;
    width: 100px;
   }
@@ -102,6 +102,7 @@ header {
     transform: scale(1.5);
     opacity: 1;
   }
+
   .cymb-animation {
     transform: rotateX(360deg)
   }
@@ -114,11 +115,10 @@ footer {
 
   p {
     opacity: 1;
-    transition: 0.5s;
+    transition: all 1s ease-in-out;
   }
 }
 
 .drumType {
   opacity: 0;
-  transform: translateY(-800px)
 }

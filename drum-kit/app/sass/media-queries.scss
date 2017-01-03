@@ -6,6 +6,9 @@
   #drums-container {
     padding: 0 5px;
   }
+  #it-header {
+    font-size: 70px;
+  }
   .drum {
     border-radius: 50%;
     height: 100px;
@@ -20,7 +23,7 @@
     font-size: 70px;
   }
   footer p {
-    font-size: 10vw;
+    font-size: 9vw;
   }
 }
 
@@ -30,6 +33,9 @@
     width: 90px;
     line-height: 90px;
     transition: height 1s ease-in;
+  }
+  .line {
+    height: 10px;
   }
 }
 
