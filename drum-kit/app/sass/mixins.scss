@@ -6,3 +6,15 @@ $short-height: 768px;
     @content;
   }
 }
+
+@mixin skinnyShort {
+  @media screen and (max-width: $skinny-width) and (max-height: $short-height){
+    @content;
+  }
+}
+
+@mixin med-and-large-width {
+  @media screen and (min-width: $skinny-width) {
+    @content;
+  }
+}

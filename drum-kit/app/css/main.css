@@ -23,18 +23,6 @@ header, footer {
   font-size: 40px;
 }
 
-@media screen and (max-width: 631px) and (max-height: 768px) {
-  .drum {
-    height: 90px;
-    width: 90px;
-    line-height: 90px;
-    transition: height 1s ease-in;
-  }
-  .line {
-    height: 10px;
-  }
-}
-
 @media screen and (min-width: 632px) {
   .drum {
     border-radius: 50%;
@@ -80,7 +68,7 @@ header, footer {
     line-height: 140px;
   }
   header, footer {
-    font-size: 100px;
+    font-size: 90px;
   }
 }
 
@@ -189,10 +177,20 @@ header {
 @media screen and (max-width: 631px) {
   #drums-container .drum {
     border-radius: 50%;
-    height: 100px;
-    line-height: 100px;
+    height: 90px;
+    line-height: 90px;
     margin: 3px 0px;
-    width: 100px;
+    width: 90px;
+  }
+}
+
+@media screen and (min-width: 631px) {
+  #drums-container .drum {
+    border-radius: 50%;
+    height: 140px;
+    line-height: 140px;
+    margin: 5px;
+    width: 140px;
   }
 }
 

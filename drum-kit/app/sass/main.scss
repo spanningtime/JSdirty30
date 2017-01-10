@@ -106,10 +106,18 @@ header {
 
     @include skinny {
       border-radius: 50%;
-      height: 100px;
-      line-height: 100px;
+      height: 90px;
+      line-height: 90px;
       margin: 3px 0px;
-      width: 100px;
+      width: 90px;
+    }
+
+    @include med-and-large-width {
+      border-radius: 50%;
+      height: 140px;
+      line-height: 140px;
+      margin: 5px;
+      width: 140px;
     }
   }
   .cymb {
