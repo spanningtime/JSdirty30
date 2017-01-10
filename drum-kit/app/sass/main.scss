@@ -2,6 +2,7 @@
 @import 'base';
 @import 'colors';
 @import 'media-queries';
+@import 'mixins';
 
 body {
   background: $blue;
@@ -11,6 +12,10 @@ body {
 header {
   color: $pink;
   font-family: helvetica;
+
+  @include skinny {
+    font-size: 70px;
+  }
 }
 
 #drumkit-header-container {
@@ -39,6 +44,10 @@ header {
   //  font-size: 90px;
    margin-top: 8px;
    width: 100px;
+
+  //  @include skinny {
+  //    font-size: 70px
+  //  }
   }
 
   #lines-container {
@@ -76,6 +85,10 @@ header {
   padding-bottom: 20px;
   width: 100%;
 
+  @include skinny {
+    padding: 0 5px;
+  }
+
   .drums-position-container {
     display: flex;
     justify-content: center;
@@ -90,6 +103,14 @@ header {
     text-align: center;
     transition: transform 0.1s ease-in, height 0.5s ease-in-out, width 0.5s ease-in-out, line-height 0.5s ease-in-out;
     z-index: 1;
+
+    @include skinny {
+      border-radius: 50%;
+      height: 100px;
+      line-height: 100px;
+      margin: 3px 0px;
+      width: 100px;
+    }
   }
   .cymb {
     background-color: $yellow;
@@ -112,6 +133,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  @include skinny {
+    font-size: 9vw;
+  }
 
   p {
     opacity: 1;
