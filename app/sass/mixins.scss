@@ -1,0 +1,20 @@
+$skinny-width: 631px;
+$short-height: 768px;
+
+@mixin skinnyTall {
+  @media screen and (max-width: $skinny-width) {
+    @content;
+  }
+}
+
+@mixin skinnyShort {
+  @media screen and (max-width: $skinny-width) and (max-height: $short-height){
+    @content;
+  }
+}
+
+// @mixin med-and-large-width {
+//   @media screen and (min-width: $skinny-width) {
+//     @content;
+//   }
+// }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>drumk it</title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  </head>
+  <body>
+
+    <section id="drumkit-header-container">
+      <div id="drumk-container">
+        <header>DRUM</header><header id="it-header">K</header>
+      </div>
+      <div id="lines-it-container">
+        <div id="lines-container">
+          <div class="line" id="purp"></div>
+          <div class="line" id="green"></div>
+          <div class="line" id="yellow"></div>
+        </div>
+        <header id="it-header">IT</header>
+      </div>
+    </section>
+
+    <section id="drums-container">
+      <div class="drums-position-container top">
+        <div data-key="89" class="drum cymb">Y</div>
+        <div data-key="85" class="drum">U</div>
+        <div data-key="73" class="drum">I</div>
+        <div data-key="79" class="drum cymb">O</div>
+      </div>
+      <div class="drums-position-container mid">
+        <div data-key="72" class="drum mid cymb">H</div>
+        <div data-key="74" class="drum mid">J</div>
+        <div data-key="75" class="drum mid">K</div>
+      </div>
+      <div class="drums-position-container bottom">
+        <div data-key="78" class="drum snare-kick">N</div>
+        <div data-key="77" class="drum snare-kick">M</div>
+      </div>
+    </section>
+
+    <footer>
+      <p id="drum-name"></p>
+      <p id="directions">bang them drums</p>
+    </footer>
+
+    <audio data-key="89" src="sounds/openhat.wav"></audio>
+    <audio data-key="85" src="sounds/boom.wav"></audio>
+    <audio data-key="73" src="sounds/boom.wav"></audio>
+    <audio data-key="79" src="sounds/ride.wav"></audio>
+    <audio data-key="72" src="sounds/hihat.wav"></audio>
+    <audio data-key="74" src="sounds/tom.wav"></audio>
+    <audio data-key="75" src="sounds/tom.wav"></audio>
+    <audio data-key="78" src="sounds/snare.wav"></audio>
+    <audio data-key="77" src="sounds/kick.wav"></audio>
+    <audio id ="bangDrumsVoice" src="sounds/bangthemdrums.wav"></audio>
+
+
+  <script src="//localhost:35729/livereload.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.9.1/polyfill.min.js"></script>
+  <script src="js/app-es5.js"/>
+  </body>
+</html>
