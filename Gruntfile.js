@@ -59,9 +59,6 @@ module.exports = function(grunt) {
     },
     surge: {
       'drumk it': {
-        options: {
-
-        }
       }
     }
   });
