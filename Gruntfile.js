@@ -24,7 +24,7 @@ module.exports = function(grunt) {
           outputStyle: 'expanded'
         },
         files: {
-          'app/css/main.css': 'app/sass/main.scss'
+          'app/public/css/main.css': 'app/sass/main.scss'
         }
       }
     },
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'app/js/app-es5.js': 'app/js/app.js'
+          'app/public/js/app-es5.js': 'app/js/app.js'
         }
       }
     },
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
           port: 6969,
           protocol: 'http',
           hostname: '0.0.0.0',
-          base: 'app',
+          base: 'app/public',
           directory: null,
           open: false,
           keepalive: true,
@@ -56,6 +56,13 @@ module.exports = function(grunt) {
     livereload: {
       options: { livereload: true },
       files: ['app/css/main.css']
+    },
+    surge: {
+      'drumk it': {
+        options: {
+
+        }
+      }
     }
   });
 
@@ -63,6 +70,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-babel');
+  grunt.loadNpmTasks('deploy', ['surge'])
 
   grunt.registerTask('default', ['connect']);
   grunt.registerTask('go', ['babel', 'sass', 'watch']);
