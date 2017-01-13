@@ -1,5 +1,4 @@
 @import 'base';
-@import 'media-queries';
 @import 'mixins';
 
 body {
@@ -7,18 +6,18 @@ body {
   margin: 0px;
 }
 
-header {
-  // font-family: 'Q' helvetica;
-
-  @include skinnyTall {
-    font-size: 70px;
-  }
-}
-
 #drumkit-header-container {
   display: flex;
   height: 195px;
   flex-direction: column;
+
+  @include shortHeight {
+    margin: 5px 5px -25px 10px;
+  }
+
+  @include normalHeight {
+    margin: 10px 10px 25px 15px;
+  }
 
   #drumk-container {
     justify-content: flex-end;
@@ -26,6 +25,10 @@ header {
     flex-direction: row;
     margin-right: 10px;
     margin-bottom: -15px;
+
+    @include shortHeight {
+      margin-bottom: -20px;
+    }
   }
 }
 
@@ -36,9 +39,6 @@ header {
   width: 100%;
 
   #it-header {
-    -webkit-transform: rotate(90deg);
-   -moz-transform: rotate(90deg);
-   -ms-transform: rotate(90deg);
    transform: rotate(90deg);
    margin-top: 8px;
    width: 100px;
@@ -49,19 +49,21 @@ header {
   }
 
   .line {
-    background-color: $purple;
     margin-bottom: 10px;
     opacity: 0.5;
     transition: 0.3s;
 
-    &:nth-child(2) {
-      background-color: $green;
-    }
-
     &:nth-child(3) {
-      background-color: $yellow;
       margin-bottom: 0px;
       margin-top: 10px;
+    }
+
+    @include shortHeight {
+      height: 15px;
+    }
+
+    @include normalHeight {
+        height: 20px
     }
   }
 
@@ -72,7 +74,6 @@ header {
 }
 
 #drums-container {
-  background-color: $lightPink;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,7 +93,6 @@ header {
 
   .drum {
     border-radius: 50%;
-    background-color: $green;
     height: 140px;
     line-height: 140px;
     margin: 5px;
@@ -109,12 +109,6 @@ header {
       width: 90px;
     }
   }
-  .cymb {
-    background-color: $yellow;
-  }
-  .snare-kick {
-    background-color: $purple;
-  }
 
   .play {
     transform: scale(1.5);
@@ -130,10 +124,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-
-  @include skinnyTall {
-    font-size: 9vw;
-  }
 
   p {
     opacity: 1;

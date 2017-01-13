@@ -1,3 +1,5 @@
+@import 'mixins';
+
 $blue: #aec7d3;
 $green: #3c7a70;
 $pink: #ec6763;
@@ -7,16 +9,61 @@ $lightPink: hsla(2, 78%, 66%, 0.6);
 
 header, footer, .drum {
   font-family: 'Quicksand', helvetica, sans-serif;
+  font-size: 90px;
 }
 
 header {
   transition: font-size 0.5s ease-in-out;
+
+  @include shortHeight {
+    font-size: 70px;
+  }
+
+  @include skinnyTall {
+    font-size: 70px;
+  }
 }
 
 header, footer {
   color: $pink;
 }
 
+footer {
+
+  @include shortHeight {
+    font-size: 7vw;
+  }
+  
+  @include skinnyTall {
+    font-size: 9vw;
+  }
+}
+
 .drum {
   font-size: 40px;
+  background-color: $green;
+}
+
+.cymb {
+  background-color: $yellow;
+}
+
+.snare-kick {
+  background-color: $purple;
+}
+
+.line {
+  background-color: $purple;
+
+  &:nth-child(2) {
+    background-color: $green;
+  }
+
+  &:nth-child(3) {
+    background-color: $yellow;
+  }
+}
+
+#drums-container {
+  background-color: $lightPink;
 }

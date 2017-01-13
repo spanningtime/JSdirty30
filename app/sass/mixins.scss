@@ -1,6 +1,10 @@
+//variables
 $skinny-width: 631px;
 $short-height: 768px;
+$normal-height: 769px;
 
+
+// media queries
 @mixin skinnyTall {
   @media screen and (max-width: $skinny-width) {
     @content;
@@ -13,8 +17,14 @@ $short-height: 768px;
   }
 }
 
-// @mixin med-and-large-width {
-//   @media screen and (min-width: $skinny-width) {
-//     @content;
-//   }
-// }
+@mixin normalHeight {
+  @media screen and (min-height: $normal-height) {
+    @content;
+  }
+}
+
+@mixin shortHeight {
+  @media screen and (max-height: 768px) {
+    @content;
+  }
+}

@@ -1,56 +1,16 @@
 header, footer, .drum {
   font-family: 'Quicksand', helvetica, sans-serif;
+  font-size: 90px;
 }
 
 header {
   transition: font-size 0.5s ease-in-out;
 }
 
-header, footer {
-  color: #ec6763;
-}
-
-.drum {
-  font-size: 40px;
-}
-
 @media screen and (max-height: 768px) {
-  .line {
-    height: 15px;
-  }
-  #drumkit-header-container {
-    margin: 5px 5px -25px 10px;
-  }
-  #drumk-container {
-    margin-bottom: -20px;
-  }
   header {
     font-size: 70px;
   }
-  footer p {
-    font-size: 7vw;
-    margin-top: 10px;
-  }
-}
-
-@media screen and (min-height: 769px) {
-  .line {
-    height: 20px;
-  }
-  #drumkit-header-container {
-    margin: 10px 10px 25px 15px;
-  }
-}
-
-@media screen and (min-height: 769px) and (min-width: 632px) {
-  header, footer {
-    font-size: 90px;
-  }
-}
-
-body {
-  background: #aec7d3;
-  margin: 0px;
 }
 
 @media screen and (max-width: 631px) {
@@ -59,10 +19,72 @@ body {
   }
 }
 
+header, footer {
+  color: #ec6763;
+}
+
+@media screen and (max-height: 768px) {
+  footer {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (max-width: 631px) {
+  footer {
+    font-size: 9vw;
+  }
+}
+
+.drum {
+  font-size: 40px;
+  background-color: #3c7a70;
+}
+
+.cymb {
+  background-color: #dbdb98;
+}
+
+.snare-kick {
+  background-color: #696c91;
+}
+
+.line {
+  background-color: #696c91;
+}
+
+.line:nth-child(2) {
+  background-color: #3c7a70;
+}
+
+.line:nth-child(3) {
+  background-color: #dbdb98;
+}
+
+#drums-container {
+  background-color: rgba(236, 105, 101, 0.6);
+}
+
+body {
+  background: #aec7d3;
+  margin: 0px;
+}
+
 #drumkit-header-container {
   display: flex;
   height: 195px;
   flex-direction: column;
+}
+
+@media screen and (max-height: 768px) {
+  #drumkit-header-container {
+    margin: 5px 5px -25px 10px;
+  }
+}
+
+@media screen and (min-height: 769px) {
+  #drumkit-header-container {
+    margin: 10px 10px 25px 15px;
+  }
 }
 
 #drumkit-header-container #drumk-container {
@@ -73,6 +95,12 @@ body {
   margin-bottom: -15px;
 }
 
+@media screen and (max-height: 768px) {
+  #drumkit-header-container #drumk-container {
+    margin-bottom: -20px;
+  }
+}
+
 #lines-it-container {
   align-items: center;
   display: flex;
@@ -81,9 +109,6 @@ body {
 }
 
 #lines-it-container #it-header {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
   margin-top: 8px;
   width: 100px;
@@ -94,20 +119,26 @@ body {
 }
 
 #lines-it-container .line {
-  background-color: #696c91;
   margin-bottom: 10px;
   opacity: 0.5;
   transition: 0.3s;
 }
 
-#lines-it-container .line:nth-child(2) {
-  background-color: #3c7a70;
-}
-
 #lines-it-container .line:nth-child(3) {
-  background-color: #dbdb98;
   margin-bottom: 0px;
   margin-top: 10px;
+}
+
+@media screen and (max-height: 768px) {
+  #lines-it-container .line {
+    height: 15px;
+  }
+}
+
+@media screen and (min-height: 769px) {
+  #lines-it-container .line {
+    height: 20px;
+  }
 }
 
 #lines-it-container .line-transition {
@@ -116,7 +147,6 @@ body {
 }
 
 #drums-container {
-  background-color: rgba(236, 105, 101, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,7 +169,6 @@ body {
 
 #drums-container .drum {
   border-radius: 50%;
-  background-color: #3c7a70;
   height: 140px;
   line-height: 140px;
   margin: 5px;
@@ -159,14 +188,6 @@ body {
   }
 }
 
-#drums-container .cymb {
-  background-color: #dbdb98;
-}
-
-#drums-container .snare-kick {
-  background-color: #696c91;
-}
-
 #drums-container .play {
   transform: scale(1.5);
   opacity: 1;
@@ -180,12 +201,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-}
-
-@media screen and (max-width: 631px) {
-  footer {
-    font-size: 9vw;
-  }
 }
 
 footer p {
