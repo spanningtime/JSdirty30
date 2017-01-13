@@ -9,24 +9,24 @@ var lines = document.getElementsByClassName('line');
 var drums = document.getElementById('drums-container');
 var drumName = document.getElementById('drum-name');
 var directions = document.getElementById('directions');
+var bangDrumsVoice = document.getElementById('bangDrumsVoice');
 var lastClick = void 0;
 
-// TIMER FUNCTION
 var bangDrums = function bangDrums() {
   if (Date.now() - lastClick > 1500) {
-    directions.innerHTML = "bang them drums";
+    if (directions.innerHTML === "") {
+      directions.innerHTML = "bang them drums";
+      bangDrumsVoice.play();
+    }
   }
 };
 
 var intervalId = window.setInterval("bangDrums()", 2000);
 
-var addDrumName = function addDrumName() {
-  drumName.classList.add("drumType");
-};
-
 window.onresize = function () {
-  directions.innerHTML = "bang them drums";
+  return directions.innerHTML = "bang them drums";
 };
+window.onload = bangDrumsVoice.play();
 
 var isYellow = function isYellow(code) {
   if (code == 89 || code == 79 || code == 72) {
@@ -44,6 +44,10 @@ var isGreen = function isGreen(code) {
   if (code == 85 || code == 73 || code == 74 || code == 75) {
     return true;
   }
+};
+
+var addDrumName = function addDrumName() {
+  return drumName.classList.add("drumType");
 };
 
 var addClasses = function addClasses(code, el) {
@@ -65,7 +69,7 @@ window.addEventListener('keydown', function (event) {
   var audio = document.querySelector('audio[data-key="' + event.keyCode + '"]');
 
   if (!audio) return;
-  audio.currentTime = 0; // rewind to the start;
+  audio.currentTime = 0;
   audio.play();
 
   directions.innerHTML = '';
@@ -114,13 +118,13 @@ var removeTransition = function removeTransition(event) {
   drumName.innerHTML = '';
 };
 
-var eachDrum = document.querySelectorAll('.drum');
+var allDrums = document.querySelectorAll('.drum');
 
 var endTransition = function endTransition(element) {
   element.addEventListener('transitionend', removeTransition);
 };
 
-eachDrum.forEach(function (drum) {
+allDrums.forEach(function (drum) {
   endTransition(drum);
 });
 

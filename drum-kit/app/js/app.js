@@ -18,24 +18,25 @@ const lines = document.getElementsByClassName('line');
 const drums = document.getElementById('drums-container');
 const drumName = document.getElementById('drum-name');
 const directions = document.getElementById('directions');
+const bangDrumsVoice = document.getElementById('bangDrumsVoice');
 let lastClick;
 
-// TIMER FUNCTION
+
 const bangDrums = function() {
   if (Date.now() - lastClick > 1500) {
-    directions.innerHTML = "bang them drums"
+    if (directions.innerHTML === "") {
+      directions.innerHTML = "bang them drums";
+      bangDrumsVoice.play();
+    }
   }
 };
 
 let intervalId = window.setInterval("bangDrums()", 2000);
 
-const addDrumName = function() {
-  drumName.classList.add("drumType")
-};
 
-window.onresize = function() {
-  directions.innerHTML = "bang them drums"
-};
+window.onresize = () => directions.innerHTML = "bang them drums"
+window.onload = bangDrumsVoice.play();
+
 
 const isYellow = function(code) {
   if (code == 89 || code == 79 || code == 72) {
@@ -55,7 +56,9 @@ const isGreen = function(code) {
   }
 };
 
-const addClasses = function(code, el) {
+const addDrumName = () => drumName.classList.add("drumType");
+
+const addClasses = (code, el) => {
   if (isPurple(code)) {
     purpLine.classList.add("line-transition");
   }
@@ -76,7 +79,7 @@ window.addEventListener('keydown', (event) => {
   const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
 
   if (!audio) return;
-  audio.currentTime = 0; // rewind to the start;
+  audio.currentTime = 0;
   audio.play()
 
   directions.innerHTML = '';
@@ -125,13 +128,13 @@ const removeTransition = function(event) {
   drumName.innerHTML = '';
 }
 
-const eachDrum = document.querySelectorAll('.drum');
+const allDrums = document.querySelectorAll('.drum');
 
 const endTransition = function(element) {
   element.addEventListener('transitionend', removeTransition);
 }
 
-eachDrum.forEach((drum) => {
+allDrums.forEach((drum) => {
   endTransition(drum)
 });
 
