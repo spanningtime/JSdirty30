@@ -58,7 +58,12 @@ module.exports = function(grunt) {
       files: ['app/css/main.css']
     },
     surge: {
-      'drumk it': {
+      'drumk-it': {
+        options: {
+          'public'
+          project: 'app/',
+          domain: 'drumk-it.surge.sh'
+        }
       }
     }
   });
@@ -67,9 +72,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-babel');
-  grunt.loadNpmTasks('deploy', ['surge'])
+  grunt.loadNpmTasks('grunt-surge');
 
+  grunt.registerTask('deploy', ['surge']);
   grunt.registerTask('default', ['connect']);
   grunt.registerTask('go', ['babel', 'sass', 'watch']);
-
 }
