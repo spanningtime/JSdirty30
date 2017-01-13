@@ -45,7 +45,7 @@ module.exports = function(grunt) {
           port: 6969,
           protocol: 'http',
           hostname: '0.0.0.0',
-          base: 'app/public',
+          base: 'public',
           directory: null,
           open: false,
           keepalive: true,
