@@ -1,5 +1,5 @@
 header, footer, .drum {
-  font-family: helvetica;
+  font-family: 'Quicksand', helvetica, sans-serif;
 }
 
 header {
@@ -53,11 +53,6 @@ body {
   margin: 0px;
 }
 
-header {
-  color: #ec6763;
-  font-family: helvetica;
-}
-
 @media screen and (max-width: 631px) {
   header {
     font-size: 70px;
@@ -75,6 +70,7 @@ header {
   display: flex;
   flex-direction: row;
   margin-right: 10px;
+  margin-bottom: -15px;
 }
 
 #lines-it-container {

@@ -1,12 +1,12 @@
 
 const keyCodes = [
   { keycode: 89, drumType: 'open high hat' },
-  { keycode: 85, drumType: 'boom' },
-  { keycode: 73, drumType: 'boom' },
+  { keycode: 85, drumType: 'tom' },
+  { keycode: 73, drumType: 'tom' },
   { keycode: 79, drumType: 'ride' },
   { keycode: 72, drumType: 'hi hat' },
-  { keycode: 74, drumType: 'tom' },
-  { keycode: 75, drumType: 'tom' },
+  { keycode: 74, drumType: 'floor tom' },
+  { keycode: 75, drumType: 'floor tom' },
   { keycode: 78, drumType: 'snare' },
   { keycode: 77, drumType: 'kick'}
 ];
@@ -32,7 +32,6 @@ const bangDrums = function() {
 };
 
 let intervalId = window.setInterval("bangDrums()", 2000);
-
 
 window.onresize = () => directions.innerHTML = "bang them drums"
 window.onload = bangDrumsVoice.play();
@@ -89,9 +88,11 @@ window.addEventListener('keydown', (event) => {
     if (kc == el.keycode) {
       drumName.innerHTML = el.drumType.toUpperCase();
     }
+
     addClasses(kc, target);
     target.classList.add("play");
   });
+
     addDrumName();
 });
 

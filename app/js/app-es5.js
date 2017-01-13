@@ -1,6 +1,6 @@
 'use strict';
 
-var keyCodes = [{ keycode: 89, drumType: 'open high hat' }, { keycode: 85, drumType: 'boom' }, { keycode: 73, drumType: 'boom' }, { keycode: 79, drumType: 'ride' }, { keycode: 72, drumType: 'hi hat' }, { keycode: 74, drumType: 'tom' }, { keycode: 75, drumType: 'tom' }, { keycode: 78, drumType: 'snare' }, { keycode: 77, drumType: 'kick' }];
+var keyCodes = [{ keycode: 89, drumType: 'open high hat' }, { keycode: 85, drumType: 'tom' }, { keycode: 73, drumType: 'tom' }, { keycode: 79, drumType: 'ride' }, { keycode: 72, drumType: 'hi hat' }, { keycode: 74, drumType: 'floor tom' }, { keycode: 75, drumType: 'floor tom' }, { keycode: 78, drumType: 'snare' }, { keycode: 77, drumType: 'kick' }];
 
 var purpLine = document.getElementById('purp');
 var greenLine = document.getElementById('green');
@@ -79,9 +79,11 @@ window.addEventListener('keydown', function (event) {
     if (kc == el.keycode) {
       drumName.innerHTML = el.drumType.toUpperCase();
     }
+
     addClasses(kc, target);
     target.classList.add("play");
   });
+
   addDrumName();
 });
 

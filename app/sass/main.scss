@@ -1,5 +1,4 @@
 @import 'base';
-@import 'colors';
 @import 'media-queries';
 @import 'mixins';
 
@@ -9,8 +8,7 @@ body {
 }
 
 header {
-  color: $pink;
-  font-family: helvetica;
+  // font-family: 'Q' helvetica;
 
   @include skinnyTall {
     font-size: 70px;
@@ -27,6 +25,7 @@ header {
     display: flex;
     flex-direction: row;
     margin-right: 10px;
+    margin-bottom: -15px;
   }
 }
 
