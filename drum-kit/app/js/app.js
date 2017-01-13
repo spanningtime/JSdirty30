@@ -34,7 +34,7 @@ const addDrumName = function() {
 };
 
 window.onresize = function() {
-  directions.innerHTML = "bang on them drums"
+  directions.innerHTML = "bang them drums"
 };
 
 const isYellow = function(code) {
@@ -76,6 +76,7 @@ window.addEventListener('keydown', (event) => {
   const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
 
   if (!audio) return;
+  audio.currentTime = 0; // rewind to the start;
   audio.play()
 
   directions.innerHTML = '';
@@ -96,6 +97,7 @@ drums.addEventListener('click', (event) => {
   const audio = document.querySelector(`audio[data-key="${event.target.getAttribute('data-key')}"]`);
 
   if (!audio) return;
+  audio.currentTime = 0;
   audio.play();
 
   directions.innerHTML = '';

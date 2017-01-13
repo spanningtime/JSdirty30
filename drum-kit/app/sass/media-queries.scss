@@ -75,7 +75,7 @@
   }
 
   footer p {
-    font-size: 10vw;
+    font-size: 7vw;
     margin-top: 10px;
   }
 }
@@ -91,11 +91,11 @@
 
 @media screen and (min-height: 769px) and (min-width: 632px) {
 
-  .drum {
-    height: 140px;
-    width: 140px;
-    line-height: 140px;
-  }
+  // .drum {
+  //   height: 140px;
+  //   width: 140px;
+  //   line-height: 140px;
+  // }
   header, footer {
     font-size: 90px;
   }
