@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         tasks: ['sass']
       },
       html: {
-        files: ['app/index.html']
+        files: ['public/index.html']
       },
       js: {
         files: ['app/js/app.js'],
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
           outputStyle: 'expanded'
         },
         files: {
-          'app/public/css/main.css': 'app/sass/main.scss'
+          'public/css/main.css': 'app/sass/main.scss'
         }
       }
     },
@@ -35,7 +35,7 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          'app/public/js/app-es5.js': 'app/js/app.js'
+          'public/js/app-es5.js': 'app/js/app.js'
         }
       }
     },
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
     },
     livereload: {
       options: { livereload: true },
-      files: ['app/css/main.css']
+      files: ['public/css/main.css']
     }
   });
 
