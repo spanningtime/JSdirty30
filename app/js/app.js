@@ -117,7 +117,7 @@ drums.addEventListener('click', (event) => {
   addClasses(dk, event.target)
   event.target.classList.add("play");
   addDrumName();
-})
+});
 
 const removeTransition = function(event) {
   for (let x = 0; x < lines.length; x++) {

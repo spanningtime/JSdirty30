@@ -29,11 +29,10 @@ header, footer {
 }
 
 footer {
-
   @include shortHeight {
     font-size: 7vw;
   }
-  
+
   @include skinnyTall {
     font-size: 9vw;
   }
