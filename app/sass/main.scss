@@ -2,7 +2,6 @@
 @import 'mixins';
 
 body {
-  background: $blue;
   margin: 0px;
 }
 
@@ -98,7 +97,11 @@ body {
     margin: 5px;
     opacity: 0.7;
     text-align: center;
-    transition: transform 0.1s ease-in, height 0.5s ease-in-out, width 0.5s ease-in-out, line-height 0.5s ease-in-out;
+    transition:
+      transform 0.1s ease-in,
+      height 0.5s ease-in-out,
+      width 0.5s ease-in-out,
+      line-height 0.5s ease-in-out;
     width: 140px;
 
     @include skinnyTall {
@@ -128,10 +131,10 @@ footer {
   p {
     opacity: 1;
     margin-top: 10px;
-    transition: opacity 1s ease-in-out;
+    transition: opacity .5s;
   }
-}
 
-.drumType {
-  opacity: 0;
+  .drumType {
+    opacity: 0;
+  }
 }

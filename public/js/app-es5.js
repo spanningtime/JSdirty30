@@ -7,27 +7,42 @@ var greenLine = document.getElementById('green');
 var yellowLine = document.getElementById('yellow');
 var lines = document.getElementsByClassName('line');
 var drums = document.getElementById('drums-container');
+var allDrums = document.querySelectorAll('.drum');
 var drumName = document.getElementById('drum-name');
 var directions = document.getElementById('directions');
 var bangDrumsVoice = document.getElementById('bangDrumsVoice');
+var numberOfClicks = 0;
 var lastClick = void 0;
-
-var bangDrums = function bangDrums() {
-  if (Date.now() - lastClick > 1500) {
-    if (directions.innerHTML === "") {
-      directions.innerHTML = "bang them drums";
-      bangDrumsVoice.play();
-    }
-  }
-};
-
-var intervalId = window.setInterval("bangDrums()", 2000);
+var intervalID = void 0;
 
 window.onresize = function () {
   return directions.innerHTML = "bang them drums";
 };
+
 window.onload = bangDrumsVoice.play();
 
+//To avoid having multiple intervals started this only starts an interval after the first click or keydown.
+var checkToStartInterval = function checkToStartInterval() {
+  numberOfClicks < 2 ? startInterval() : null;
+};
+
+var startInterval = function startInterval() {
+  intervalID = window.setInterval("bangDrums()", 2000);
+};
+
+// If it's been more than 2s since the last click/keydown add directions, play voice, clear & reset interval;
+var bangDrums = function bangDrums() {
+  if (Date.now() - lastClick > 1999) {
+    if (directions.innerHTML === "") {
+      directions.innerHTML = "bang them drums";
+      bangDrumsVoice.play();
+      numberOfClicks = 0;
+      window.clearInterval(intervalID);
+    }
+  }
+};
+
+// keycodes of letters that represent colors of drums
 var isYellow = function isYellow(code) {
   if (code == 89 || code == 79 || code == 72) {
     return true;
@@ -63,7 +78,10 @@ var addClasses = function addClasses(code, el) {
 };
 
 window.addEventListener('keydown', function (event) {
+  numberOfClicks += 1;
   lastClick = Date.now();
+  checkToStartInterval();
+
   var target = document.querySelector('div[data-key="' + event.keyCode + '"]');
 
   var audio = document.querySelector('audio[data-key="' + event.keyCode + '"]');
@@ -88,7 +106,9 @@ window.addEventListener('keydown', function (event) {
 });
 
 drums.addEventListener('click', function (event) {
+  numberOfClicks += 1;
   lastClick = Date.now();
+  checkToStartInterval();
   var audio = document.querySelector('audio[data-key="' + event.target.getAttribute('data-key') + '"]');
 
   if (!audio) return;
@@ -119,8 +139,6 @@ var removeTransition = function removeTransition(event) {
   drumName.classList.remove('drumType');
   drumName.innerHTML = '';
 };
-
-var allDrums = document.querySelectorAll('.drum');
 
 var endTransition = function endTransition(element) {
   element.addEventListener('transitionend', removeTransition);

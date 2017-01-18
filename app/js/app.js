@@ -16,27 +16,41 @@ const greenLine = document.getElementById('green');
 const yellowLine = document.getElementById('yellow');
 const lines = document.getElementsByClassName('line');
 const drums = document.getElementById('drums-container');
+const allDrums = document.querySelectorAll('.drum');
 const drumName = document.getElementById('drum-name');
 const directions = document.getElementById('directions');
 const bangDrumsVoice = document.getElementById('bangDrumsVoice');
+let numberOfClicks = 0;
 let lastClick;
+let intervalID;
+
+window.onresize = () => directions.innerHTML = "bang them drums";
+
+window.onload = bangDrumsVoice.play();
+
+//To avoid having multiple intervals started this only starts an interval after the first click or keydown.
+const checkToStartInterval = function() {
+  numberOfClicks < 2 ? startInterval() : null;
+}
 
 
+const startInterval = function() {
+    intervalID = window.setInterval("bangDrums()", 2000);
+};
+
+// If it's been more than 2s since the last click/keydown add directions, play voice, clear & reset interval;
 const bangDrums = function() {
-  if (Date.now() - lastClick > 1500) {
+  if (Date.now() - lastClick > 1999) {
     if (directions.innerHTML === "") {
       directions.innerHTML = "bang them drums";
       bangDrumsVoice.play();
+      numberOfClicks = 0;
+      window.clearInterval(intervalID)
     }
   }
 };
 
-let intervalId = window.setInterval("bangDrums()", 2000);
-
-window.onresize = () => directions.innerHTML = "bang them drums"
-window.onload = bangDrumsVoice.play();
-
-
+// keycodes of letters that represent colors of drums
 const isYellow = function(code) {
   if (code == 89 || code == 79 || code == 72) {
     return true;
@@ -72,7 +86,10 @@ const addClasses = (code, el) => {
 };
 
 window.addEventListener('keydown', (event) => {
+  numberOfClicks += 1;
   lastClick = Date.now();
+  checkToStartInterval();
+
   let target = document.querySelector(`div[data-key="${event.keyCode}"]`);
 
   const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
@@ -97,7 +114,9 @@ window.addEventListener('keydown', (event) => {
 });
 
 drums.addEventListener('click', (event) => {
+  numberOfClicks += 1;
   lastClick = Date.now();
+  checkToStartInterval();
   const audio = document.querySelector(`audio[data-key="${event.target.getAttribute('data-key')}"]`);
 
   if (!audio) return;
@@ -128,8 +147,6 @@ const removeTransition = function(event) {
   drumName.classList.remove('drumType');
   drumName.innerHTML = '';
 }
-
-const allDrums = document.querySelectorAll('.drum');
 
 const endTransition = function(element) {
   element.addEventListener('transitionend', removeTransition);

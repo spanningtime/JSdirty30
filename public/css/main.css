@@ -1,3 +1,7 @@
+body {
+  background: #aec7d3;
+}
+
 header, footer, .drum {
   font-family: 'Quicksand', helvetica, sans-serif;
   font-size: 90px;
@@ -65,7 +69,6 @@ header, footer {
 }
 
 body {
-  background: #aec7d3;
   margin: 0px;
 }
 
@@ -206,9 +209,9 @@ footer {
 footer p {
   opacity: 1;
   margin-top: 10px;
-  transition: opacity 1s ease-in-out;
+  transition: opacity .5s;
 }
 
-.drumType {
+footer .drumType {
   opacity: 0;
 }

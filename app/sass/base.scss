@@ -7,6 +7,10 @@ $purple: #696c91;
 $yellow: #dbdb98;
 $lightPink: hsla(2, 78%, 66%, 0.6);
 
+body {
+  background: $blue;
+}
+
 header, footer, .drum {
   font-family: 'Quicksand', helvetica, sans-serif;
   font-size: 90px;
