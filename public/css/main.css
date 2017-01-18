@@ -121,7 +121,7 @@ body {
 #lines-it-container .line {
   margin-bottom: 10px;
   opacity: 0.5;
-  transition: 0.3s;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 #lines-it-container .line:nth-child(3) {
