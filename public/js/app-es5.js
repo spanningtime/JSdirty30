@@ -60,6 +60,7 @@ var isGreen = function isGreen(code) {
     return true;
   }
 };
+// ----------------
 
 var addDrumName = function addDrumName() {
   return drumName.classList.add("drumType");
@@ -109,6 +110,7 @@ drums.addEventListener('click', function (event) {
   numberOfClicks += 1;
   lastClick = Date.now();
   checkToStartInterval();
+
   var audio = document.querySelector('audio[data-key="' + event.target.getAttribute('data-key') + '"]');
 
   if (!audio) return;

@@ -68,6 +68,7 @@ const isGreen = function(code) {
     return true;
   }
 };
+// ----------------
 
 const addDrumName = () => drumName.classList.add("drumType");
 
@@ -117,6 +118,7 @@ drums.addEventListener('click', (event) => {
   numberOfClicks += 1;
   lastClick = Date.now();
   checkToStartInterval();
+
   const audio = document.querySelector(`audio[data-key="${event.target.getAttribute('data-key')}"]`);
 
   if (!audio) return;
